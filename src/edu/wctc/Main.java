@@ -36,21 +36,20 @@ public class Main {
         int choice;
         Scanner keyboard = new Scanner(System.in);
         do {
-            System.out.println("Welcome");
-            System.out.println("1. Employee Salary Calculator");
-            System.out.println("2. Inventory Checker");
-            System.out.print("3. Exit\n>");
+            printMenu();
             choice = Integer.parseInt(keyboard.nextLine());
             if (choice == 1) {
                 System.out.println("Employee Salary Checker");
-                for (int i = 0; i < employees.size(); i++) {
-                    System.out.println((i+1) + ". " + employees.get(i));
+                int count = 0;
+                for (Employee e : employees) {
+                    count++;
+                    System.out.println((count) + ". " + e.getIdentity());
 
                 }
                 System.out.print("Choose Employee\n>");
                 int employeeChoice;
                 employeeChoice = Integer.parseInt(keyboard.nextLine());
-                employees.get(employeeChoice).calculateSalary(employeeChoice);
+                //employees(employeeChoice);
 
             }
             else if (choice == 2) {
@@ -67,6 +66,12 @@ public class Main {
             }
         } while (choice != 3);
 
+    }
+    public static void printMenu() {
+        System.out.println("Welcome");
+        System.out.println("1. Employee Salary Calculator");
+        System.out.println("2. Inventory Checker");
+        System.out.print("3. Exit\n>");
     }
 }
 

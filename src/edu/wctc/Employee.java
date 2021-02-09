@@ -29,8 +29,6 @@ public class Employee extends Asset implements Employable {
     @Override
     public String toString() {
         //HOW TO GET THE STORED EMPLOYEE VALUES THAT USE ASSET CLASS VARIABLES
-        return "Employee{" +
-                "startDate=" + startDate +
-                '}';
+        return String.format("Employee name: %d\nEmployee Start Date: %d\nEmployee Pay Rate: %d\nCalculated Salary: ", getIdentity(), getStartDate(), getValue());
     }
 }
