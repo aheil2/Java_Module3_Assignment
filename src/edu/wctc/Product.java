@@ -20,8 +20,6 @@ public class Product extends Asset implements Sellable {
 
     @Override
     public String toString() {
-        return "Product{" +
-                "quantity=" + quantity +
-                '}';
+        return String.format("");
     }
 }

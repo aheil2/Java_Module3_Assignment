@@ -44,13 +44,10 @@ public class Main {
                 for (Employee e : employees) {
                     count++;
                     System.out.println((count) + ". " + e.getIdentity());
-
                 }
                 System.out.print("Choose Employee\n>");
-                int employeeChoice;
-                employeeChoice = Integer.parseInt(keyboard.nextLine());
-                //employees(employeeChoice);
-
+                int employeeChoice = Integer.parseInt(keyboard.nextLine());
+                System.out.println(employees.get((employeeChoice - 1)));
             }
             else if (choice == 2) {
                 System.out.println("Inventory Checker");
@@ -62,7 +59,6 @@ public class Main {
                 System.out.println("Classification: ");
                 System.out.println("Color: ");
                 System.out.println("Enter to return to menu...");
-                String backToMenu = keyboard.nextLine();
             }
         } while (choice != 3);
 
