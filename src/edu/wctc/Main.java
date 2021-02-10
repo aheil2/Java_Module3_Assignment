@@ -52,13 +52,17 @@ public class Main {
             else if (choice == 2) {
                 System.out.println("Inventory Checker");
                 System.out.print("Product SKU\n>");
-                String sku = keyboard.nextLine().toUpperCase();
-                System.out.println("Name: ");
-                System.out.println("Cost: $");
-                System.out.println("Units in Stock: ");
-                System.out.println("Classification: ");
-                System.out.println("Color: ");
-                System.out.println("Enter to return to menu...");
+                String sku = keyboard.nextLine();
+                for (Product p : inventory)
+                    if (sku.equals(p.getCode())) {
+                        System.out.println(p);
+                        String color = sku.substring(0,2);
+                        String classification = sku.substring(2,4);
+                        String colorReturn = productType.get(color);
+                        String classificationReturn = productType.get(classification);
+                        System.out.println("Color: " + colorReturn);
+                        System.out.println("Classification: " + classificationReturn);
+                    }
             }
         } while (choice != 3);
 

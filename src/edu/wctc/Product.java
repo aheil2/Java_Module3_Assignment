@@ -4,6 +4,7 @@ public class Product extends Asset implements Sellable {
     private int quantity;
 
     public Product(String sku, String product, Double price, int quantity) {
+        super(sku, product, price);
         this.quantity = quantity;
     }
 
@@ -20,6 +21,6 @@ public class Product extends Asset implements Sellable {
 
     @Override
     public String toString() {
-        return String.format("");
+        return String.format("Product Name: %s\nProduct Cost: $%s\nUnits in Stock: %s", getIdentity(), getValue(), getQuantity());
     }
 }
